@@ -5,6 +5,10 @@ install: npm install
 script: true
 addons:
   ssh_known_hosts: 140.143.170.28
+before_install:
+- openssl aes-256-cbc -K $encrypted_31943c0bbef1_key -iv $encrypted_31943c0bbef1_iv
+  -in server.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
 after_success:
 - ssh $SERVER_USER@$SERVER_IP "sh ~/www/blog.sh"
 branches:
@@ -12,8 +16,4 @@ branches:
   - master
 env:
   global:
-    secure: FyPlSa4+YrmgATsF+neiyMS2gwjVtGRYoJ84rnybY+WATFos66o7h0+CYufdlOjcd7cQH/m8IwRAG0scqdsJdJSGPKG1CTN1RFWvcbuA4oxQO1oIpLrAu51b4MhXk9HUxC+WC+IaUIKnApVTFHRrbzH83bzkJS+aBEU3boxCXa36DATyQFwBiXT3itw1YgSb1cFFqo9k/wZ61FvzxknJQqj0HEErpyPLLiNBFByUyWVRO1u8VV2JyWM0/KF+L48DS55A+IKt9lqM/frB+CbN1O6eBcHZx7zmodq5qu0+vR3+0XTam4wSWo/ynGROYrfRLCYOCTc+FfGLX7k7M9blzeXtvdtCyoyKGNHsoXGUglmsa95sq0/6u2A4tttLuuFb0b2zLOaD6glSl89WPYT74I+ASWmndtSY+8YAPEateUR7eIY5fvq/ULJE7pMV/3pIEAfVhHOLSTdllFji+1CaZ3sAymY/msVXKkt25qK95HBvKIiI+qlTlFMQAiQ2Mtj/LbCW/aVur/1ZtbPXQmNyQxWwwTWHH1UbmqNoQJwkEwdaeaMKJcSf14/Ac4IHCFcX85kubbdIMzuqNmlkC187zOXIDqAsblFYpa+Wmojl03+ccGdaMQi3U37uhIGWKJPgTJx1M6ItE6c4FOV2be/MzxUQlVZVX95v4S5cEKgjw9E=
-before_install:
-- openssl aes-256-cbc -K $encrypted_31943c0bbef1_key -iv $encrypted_31943c0bbef1_iv
-  -in server.enc -out ~/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
+    secure: bPXvqVQUejoRqpfgp/Fe6eVNNGLiguCyJ8v/nZz7DzmVS8R96C1VrcjUUspUs/+aLDLjYHEzbXdRUeVnC7QWqJ6s2RcPcCt4ebKeoHl2lMW4tV0Kw7L9Ie1N7SKgbu0gtI7m1Oki0EvA7NGzaGEYXcmhoCykzJRKPCmSBclqRO+TqDitBHw8zJdBui2UpG7g5FCKvWW6FEXW0xbnZZ9TTymYgCvKxvVf/+utn9yUvyC1kwcdTHFI0RohaC5jInKkrdVaDp+MNcf9gOfTxfXflJNG8xBPE4FaQ5uBYnpAXJYlC2wOFxImKv94HDoXpI5EhSUtaMPJBOT8tCeQAmU/3PDisHHP8ECvdQlWUMUnm3BvDWYCVe743YfZd3PCgUM01ILUosof5Qi1oqlaJkYi71FYsRfqFOv3WTNYQFp5bgttyuKrjc7gzlI49FJeiQIOCihNyIrKs7VNK28h2olTGYSGeU6oNed3504JWwIsKo2hyvRwanimahzq6UJPmHaMLOpBn7fr00FlnTpQBAewthPddPjHVDccpVq38MPt6X+mmgdjcajl4dr/AzqnngFx6wMTMn0fz/Nz3CPfY479fx4BPlX1VSN4JaVfYwSTQBH1caRtEONOZG+275EVffw37+d3M0dLRUyOquxvW8R/ePxC1vBrnRWL3MkjoMuEy7E=
