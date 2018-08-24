@@ -1,0 +1,41 @@
+<div class="admin-wrap" [@fadeIn]="'active'">
+	<div class="admin-operate">
+		<a class="admin-new" routerLink="/editor">
+			<i class="icon new-icon"></i>
+			新建
+		</a>
+		<a class="admin-download" (click)="download()">
+			<i class="icon download-icon"></i>
+			导出
+		</a>
+	</div>
+	<div class="archives-wrap" *ngFor="let category of categorys">
+		<div class="archive-title-wrap">
+			{{category.name}}
+		</div>
+		<div class="archives">
+			<article *ngFor="let blog of category.blogs">
+				<div class="archives-inner">
+					<span class="archive-time">{{blog.birthtime | date:'yyyy-M-dd'}}</span>
+					<p>
+						<a class="archive-name" [routerLink]="['/blog/article',blog.id]">{{blog.title}}</a>
+
+						<a class="admin-delete" title="删除" (click)="delete(category,blog)">
+							<i class="icon delete-icon"></i>
+						</a>
+						<a class="admin-edit" title="编辑" [routerLink]="['/editor',blog.id]">
+							<i class="icon edit-icon"></i>
+						</a>
+
+					</p>
+				</div>
+			</article>
+		</div>
+	</div>
+
+	<div class="archives-wrap" *ngIf="categorys.length==0">
+		<div class="archive-title-wrap">
+			分类下暂无博客
+		</div>
+	</div>
+</div>

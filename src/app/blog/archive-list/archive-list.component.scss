@@ -1,0 +1,54 @@
+.archives-wrap {
+    margin-top: 0.5rem;
+}
+
+.archive-title-wrap {
+    color: #999;
+    margin-bottom: 0.1rem;
+    text-shadow: 0 1px #fff;
+    font-weight: bold;
+}
+
+.archives {
+    column-gap: 0.1rem;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .archives {
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .archives {
+        column-count: 3;
+    }
+}
+
+article {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    overflow: hidden;
+    break-inside: avoid-column;
+}
+
+.archives-inner {
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 1px 2px 3px #ddd;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.archive-time {
+    color: #999;
+    font-size: 0.85em;
+    line-height: 1.5em;
+}
+
+.archive-name {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}

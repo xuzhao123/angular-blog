@@ -1,0 +1,13 @@
+<article>
+    <div class="article-inner">
+        <div class="article-meta clearfix">
+            <span class="article-date fl">创建时间：{{article?.birthtime | date:'yyyy-M-dd'}}</span>
+            <span class="article-date fr">更新时间：{{article?.mtime| date:'yyyy-M-dd'}}</span>
+        </div>
+        <p class="article-title">{{article?.title}}</p>
+        <div class="markdown-body" [innerHTML]="html"></div>
+        <div class="article-more-wrap" *ngIf="type=='pre'">
+            <a class="article-more" [routerLink]="['/blog/article',article?._id]">阅读全文</a>
+        </div>
+    </div>
+</article>

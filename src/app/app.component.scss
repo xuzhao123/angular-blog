@@ -1,0 +1,24 @@
+.container {
+    height: 100%;
+}
+
+.wrap {
+    height: 100%;
+    transition: 0.2s ease-out;
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        float: left;
+        width: 73.33333333333333%;
+        margin: 0 0.833333333333333%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .sidebar {
+        float: left;
+        width: 23.333333333333332%;
+        margin: 0 0.833333333333333%;
+    }
+}

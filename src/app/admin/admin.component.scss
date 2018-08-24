@@ -1,0 +1,87 @@
+.admin-wrap {
+    padding: 0 1rem;
+}
+
+.archives-wrap {
+    padding: 0.3rem 0rem;
+}
+
+.archive-title-wrap {
+    color: #999;
+    margin-bottom: 0.1rem;
+    text-shadow: 0 1px #fff;
+    font-weight: bold;
+}
+
+.archives {
+    column-gap: 0.1rem;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .archives {
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .archives {
+        column-count: 4;
+    }
+}
+
+article {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    overflow: hidden;
+    break-inside: avoid-column;
+}
+
+.archives-inner {
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 1px 2px 3px #ddd;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.archive-time {
+    color: #999;
+    font-size: 0.85em;
+    line-height: 1.5em;
+}
+
+.archive-name {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+.admin-edit,
+.admin-delete {
+    text-decoration: none;
+    text-align: center;
+    float: right;
+    margin: 0 0.05rem;
+    cursor: pointer;
+}
+
+.admin-new,
+.admin-download {
+    margin: 0.1rem;
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 0.1rem;
+    border-radius: 5px;
+    background-color: #FFF;
+    border-color: #CCC;
+    font-size: 14px;
+	text-decoration: none;
+	color: #333;
+    cursor: pointer;
+    &:hover {
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+    }
+}

@@ -1,0 +1,30 @@
+
+.icon {
+    font-family: FontAwesome;
+    color: #333;
+    font-style: normal;
+}
+
+.edit-icon {
+    &:before {
+        content: "\f044";
+    }
+}
+
+.delete-icon {
+    &:before {
+        content: "\f014";
+    }
+}
+
+.new-icon {
+    &:before {
+        content: "\f15b";
+    }
+}
+
+.download-icon {
+    &:before {
+        content: "\f019";
+    }
+}

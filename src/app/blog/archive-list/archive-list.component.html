@@ -1,0 +1,21 @@
+<div class="archives-wrap" *ngFor="let category of categorys">
+    <div class="archive-title-wrap">
+        {{category.name}}
+    </div>
+    <div class="archives">
+        <article *ngFor="let blog of category.blogs">
+            <div class="archives-inner">
+                <span class="archive-time">{{blog.birthtime | date:'yyyy-M-dd'}}</span>
+                <p>
+                    <a class="archive-name" [routerLink]="['/blog/article',blog.id]">{{blog.title}}</a>
+                </p>
+            </div>
+        </article>
+    </div>
+</div>
+
+<div class="archives-wrap" *ngIf="categorys.length==0">
+    <div class="archive-title-wrap">
+        分类下暂无博客
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<app-article *ngFor="let data of list" [article]="data"></app-article>
+<div class="nodata" *ngIf="list.length==0">
+    暂无文章
+</div>

@@ -1,0 +1,66 @@
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 625%;
+}
+
+body {
+    background: #eee;
+}
+
+.outer {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.outer:before,
+.outer:after {
+    content: "";
+    display: table;
+}
+
+.outer:after {
+    clear: both;
+}
+
+.inner {
+    float: left;
+    width: 98.33333333333333%;
+    margin: 0 0.833333333333333%;
+}
+
+.left,
+.alignleft {
+    float: left;
+}
+
+.right,
+.alignright {
+    float: right;
+}
+
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    content: ''
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}

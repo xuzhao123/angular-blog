@@ -1,0 +1,36 @@
+.widget-wrap {
+    margin: 0.5rem 0;
+}
+
+.widget-title {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 1em;
+    margin-left: 5px;
+    line-height: 1em;
+    text-shadow: 0 1px #fff;
+    font-weight: bold;
+}
+
+.widget {
+    color: #777;
+    text-shadow: 0 1px #fff;
+    background: #ddd;
+    box-shadow: 0 -1px 4px #ccc inset;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 3px;
+    line-height: 1.6em;
+    word-wrap: break-word;
+    font-size: 0.9em;
+    a {
+        color: #258fb8;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
