@@ -19,10 +19,10 @@ export class CategoryService {
     }
 
     public getCategorys() {
-        return this.http.get(`${this.categryUrl}/list`);
+        return this.http.get(`${this.categryUrl}`);
     }
 
     public addCategory(name) {
-        return this.http.post(`${this.categryUrl}/add`, name)
+        return this.http.post(`${this.categryUrl}`, name)
     }
 }

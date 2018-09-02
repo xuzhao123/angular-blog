@@ -29,7 +29,8 @@ module.exports = function (options) {
             historyApiFallback: true,
             proxy: {
                 "/api": {
-                    target: "http://127.0.0.1:5000",
+                    //target: "http://140.143.170.28:5000",
+                    target: "http://localhost:5000",
                     //pathRewrite: { "^/api": "" }
                 }
             }

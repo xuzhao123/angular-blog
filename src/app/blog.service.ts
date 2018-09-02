@@ -21,14 +21,14 @@ export class BlogService {
      * @param blog 博客内容
      */
 	public addBlog(blog) {
-		return this.http.post(`${this.blogUrl}/add`, blog);
+		return this.http.post(`${this.blogUrl}`, blog);
 	}
 
     /**
      * 获取博客
      */
 	public getBlogs() {
-		return this.http.get(`${this.blogUrl}/list`);
+		return this.http.get(`${this.blogUrl}`);
 	}
 
 	/**
@@ -36,7 +36,7 @@ export class BlogService {
 	 * @param id 博客id
 	 */
 	public getBlog(id) {
-		return this.http.get(`${this.blogUrl}/get`, { params: { id } });
+		return this.http.get(`${this.blogUrl}/${id}`);
 	}
 
 	/**
@@ -45,7 +45,7 @@ export class BlogService {
 	 * @param blog 博客信息
 	 */
 	public updateBlog(id, blog) {
-		return this.http.put(`${this.blogUrl}/update`, blog, { params: { id } });
+		return this.http.put(`${this.blogUrl}/${id}`, blog);
 	}
 
     /**
@@ -60,13 +60,7 @@ export class BlogService {
      * @param id 分类ID
      */
 	public getBlogsByCategoryId(id) {
-		const options: {
-			params?: { id }
-		} = {};
-		if (id) {
-			options.params = { id };
-		}
-		return this.http.get(`${this.blogUrl}/getBlogsByCategoryId`, options);
+		return this.http.get(`${this.blogUrl}/getBlogsByCategoryId/${id ? id : ''}`);
 	}
 
 	/**
@@ -74,7 +68,7 @@ export class BlogService {
 	 * @param id
 	 */
 	public deleteBlog(id) {
-		return this.http.delete(`${this.blogUrl}/delete`, { params: { id } });
+		return this.http.delete(`${this.blogUrl}/${id}`);
 	}
 
 	/**
