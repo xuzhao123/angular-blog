@@ -15,7 +15,10 @@ export class AuthService {
 	constructor(
 		private http: HttpClient
 	) {
-
+		const token = localStorage.getItem('token');
+		if (token) {
+			this.isLoggedIn = true;
+		}
 	}
 
 	login(username: string, password: string) {
