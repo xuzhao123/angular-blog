@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { UtilService } from '../../util.service';
+import { UtilService } from '../../_services/util.service';
 import { tipIn } from '../../animations';
 
 @Component({

@@ -1,9 +1,9 @@
 import { Component, Input, OnInit, HostBinding } from '@angular/core';
-import { BlogService } from '../../blog.service';
+import { BlogService } from '../../_services/blog.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { fadeIn } from '../../animations';
-import { ApiResult } from '../../common/ApiResult.model';
-import { UtilService } from '../../util.service';
+import { ApiResult } from '../../_models/ApiResult.model';
+import { UtilService } from '../../_services/util.service';
 
 
 @Component({

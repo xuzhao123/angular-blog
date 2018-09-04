@@ -4,10 +4,10 @@ import { mergeMap } from 'rxjs/operators';
 
 import * as SimpleMDE from 'simplemde';
 import { fadeIn } from '../animations';
-import { BlogService } from '../blog.service';
-import { ApiResult } from '../common/ApiResult.model';
-import { UtilService } from '../util.service';
-import { CategoryService } from '../category.service';
+import { BlogService } from '../_services/blog.service';
+import { ApiResult } from '../_models/ApiResult.model';
+import { UtilService } from '../_services/util.service';
+import { CategoryService } from '../_services/category.service';
 
 @Component({
     templateUrl: './editor.component.html',

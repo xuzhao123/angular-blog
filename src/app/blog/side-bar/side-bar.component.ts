@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../../blog.service';
-import { UtilService } from '../../util.service';
-import { ApiResult } from '../../common/ApiResult.model';
-import { CategoryService } from '../../category.service';
+import { BlogService } from '../../_services/blog.service';
+import { UtilService } from '../../_services/util.service';
+import { ApiResult } from '../../_models/ApiResult.model';
+import { CategoryService } from '../../_services/category.service';
 
 @Component({
     selector: 'app-side-bar',

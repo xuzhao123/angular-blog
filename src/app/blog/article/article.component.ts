@@ -17,10 +17,10 @@ import * as mdSub from 'markdown-it-sub';
 import * as mdSup from 'markdown-it-sup';
 import * as mdHl from 'markdown-it-highlightjs';
 
-import { Article } from '../ariticle.model';
-import { BlogService } from '../../blog.service';
-import { ApiResult } from '../../common/ApiResult.model';
-import { UtilService } from '../../util.service';
+import { Article } from '../../_models/ariticle.model';
+import { BlogService } from '../../_services/blog.service';
+import { ApiResult } from '../../_models/ApiResult.model';
+import { UtilService } from '../../_services/util.service';
 
 const md = MD();
 md.use(mdAbbr).use(mdContainer).use(mdDeflist).use(mdEmoji).use(mdFootnote).use(mdIns).use(mdMark).use(mdSub).use(mdSup).use(mdHl);

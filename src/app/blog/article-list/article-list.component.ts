@@ -1,9 +1,9 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { Article } from '../ariticle.model';
-import { BlogService } from '../../blog.service';
+import { Article } from '../../_models/ariticle.model';
+import { BlogService } from '../../_services/blog.service';
 import { fadeIn } from '../../animations';
-import { ApiResult } from '../../common/ApiResult.model';
-import { UtilService } from '../../util.service';
+import { ApiResult } from '../../_models/ApiResult.model';
+import { UtilService } from '../../_services/util.service';
 
 @Component({
 	selector: 'app-article-list',
