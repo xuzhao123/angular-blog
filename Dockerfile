@@ -1,4 +1,7 @@
 
+# build: docker build -t angular-blog .
+# run: docker run --name angular-blog -d -p 80:80 angular-blog
+
 FROM node:8.9.4-alpine as builder
 
 WORKDIR /ng-app

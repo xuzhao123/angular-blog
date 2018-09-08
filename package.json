@@ -13,10 +13,10 @@
     "testServer": "rimraf dist && cross-env NODE_ENV=test  webpack-dev-server --config ./config/webpack.test.js"
   },
   "keywords": [
-	"angular6",
+    "angular6",
     "webpack4",
-	"typescript",
-	"rxjs"
+    "typescript",
+    "rxjs"
   ],
   "author": "",
   "license": "ISC",
@@ -66,6 +66,7 @@
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
     "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "to-string-loader": "^1.1.5",
