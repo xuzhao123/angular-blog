@@ -8,33 +8,35 @@ import { ApiResult } from '../_models/ApiResult.model';
 export class AuthService {
 	adminUrl: string = `/${environment.baseUrl}/admin`;
 
-	isLoggedIn = false;
-
 	redirectUrl = '';
 
 	constructor(
 		private http: HttpClient
-	) {
-		const token = localStorage.getItem('token');
-		if (token) {
-			this.isLoggedIn = true;
-		}
-	}
+	) { }
 
 	login(username: string, password: string) {
 		return this.http.post<any>(`${this.adminUrl}/login`, { username, password })
 			.pipe(
 				map((result: ApiResult) => {
 					if (result.data) {
-						this.isLoggedIn = true;
-						localStorage.setItem('token', JSON.stringify(result.data.token));
+						localStorage.setItem('token', JSON.stringify(result.data));
 					}
 					return result;
 				}));
 	}
 
 	logout() {
-		this.isLoggedIn = false;
 		localStorage.removeItem('token');
+	}
+
+	get isLoggedIn() {
+		let isLoggedIn = false;
+		const token: any = JSON.parse(localStorage.getItem('token'));
+		if (token) {
+			if (+new Date() < token.expires) {
+				isLoggedIn = true;
+			}
+		}
+		return isLoggedIn;
 	}
 }

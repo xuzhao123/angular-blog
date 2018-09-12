@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../_services/Auth.service';
+import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
 import { UtilService } from '../_services/util.service';
 
@@ -25,13 +25,13 @@ export class LoginComponent implements OnInit {
 	}
 
 	onSubmit() {
+		this.loading = true;
 		this.authService.login(this.username, this.password).subscribe(
 			data => {
 				this.router.navigate([this.authService.redirectUrl]);
 			},
 			error => {
 				this.error = error;
-				debugger
 				this.utilService.showTip(error);
 				this.loading = false;
 			});

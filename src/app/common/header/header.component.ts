@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-    title: string = 'xuzhao';
+    title: string = 'sunny';
 
     constructor() { }
 }

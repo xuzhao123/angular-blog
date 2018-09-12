@@ -1,17 +1,34 @@
 <div class="edit-wrap">
-    <div class="edit-title-wrap">
-        <input class="edit-input" [(ngModel)]="title" placeholder="标题" required>
-        <span class="edit-save" (click)="save()">
-            <i class="fa fa-check" aria-hidden="true"></i>
-            保存
-        </span>
-    </div>
-    <div class="edit-catetory">
-        <input [(ngModel)]="newCategory" type="text" placeholder="新增分类">
-        <select [(ngModel)]="category">
-            <option value="">---请选择分类---</option>
-            <option *ngFor="let category of categorys" [value]='category._id'>{{category.name}}</option>
-        </select>
-    </div>
-    <textarea #simplemde></textarea>
+	<div class="edit-title-wrap">
+		<input class="edit-input" [(ngModel)]="title" placeholder="标题" required>
+		<span class="edit-save" (click)="draft()">
+			<i class="fa fa-check" aria-hidden="true"></i>
+			存为草稿
+		</span>
+		<span class="edit-save" (click)="save()">
+			<i class="fa fa-check" aria-hidden="true"></i>
+			发布
+		</span>
+	</div>
+	<div class="edit-catetory">
+		<input [(ngModel)]="newCategory" type="text" placeholder="新增分类">
+		<select [(ngModel)]="category">
+			<option value="">---请选择分类---</option>
+			<option *ngFor="let category of categorys" [value]='category._id'>{{category.name}}</option>
+		</select>
+	</div>
+	<div class="edit-tag">
+		<ul class="edit-tags-wrap">
+			<li class="edit-tags-item" *ngFor="let tag of tags">
+				{{tag}}
+				<i class="edit-tag-delete" (click)="deleteTag(tag)"></i>
+			</li>
+		</ul>
+		<input [(ngModel)]="newTag" type="text" placeholder="新增标签">
+		<span class="edit-tag-add btn" (click)="addTag()">
+			<i class="fa fa-plus" aria-hidden="true"></i>
+			标签
+		</span>
+	</div>
+	<textarea #simplemde></textarea>
 </div>

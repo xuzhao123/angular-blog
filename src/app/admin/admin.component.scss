@@ -52,9 +52,11 @@ article {
 }
 
 .archive-name {
+    max-width: calc(100% - 0.5rem);
     text-decoration: none;
     color: #555;
     font-weight: bold;
+    display: inline-block;
 }
 
 .admin-edit,
