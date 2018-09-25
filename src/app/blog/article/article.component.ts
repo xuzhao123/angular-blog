@@ -56,6 +56,9 @@ export class ArticleComponent implements OnInit {
 	}
 
 	private getForeWord(data: string): string {
+		if (/[\s\S]+<!-- more -->/.test(data)) {
+			return /[\s\S]+<!-- more -->/.exec(data)[0];
+		}
 		if (/[\s\S]+## 前言\s\s\S+/.test(data)) {
 			return /[\s\S]+## 前言\s\s\S+/.exec(data)[0];
 		} else {
