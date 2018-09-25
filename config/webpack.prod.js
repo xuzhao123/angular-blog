@@ -9,7 +9,6 @@ const helpers = require('./helpers');
 module.exports = function (options) {
 	return webpackMerge(common(options), {
 		mode: 'production',
-		//mode: 'development',
 		output: {
 			publicPath: '/',
 			path: helpers.root('dist'),
@@ -49,6 +48,7 @@ module.exports = function (options) {
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
+						'postcss-loader',
 						'sass-loader'
 					],
 					include: [helpers.root('src', 'styles')]
@@ -57,7 +57,8 @@ module.exports = function (options) {
 					test: /\.(css)$/,
 					use: [
 						MiniCssExtractPlugin.loader,
-						'css-loader'
+						'css-loader',
+						'postcss-loader'
 					],
 					include: [helpers.root('src', 'styles')]
 				},

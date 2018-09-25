@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ngToolsWebpack = require('@ngtools/webpack');
 
@@ -67,12 +68,21 @@ module.exports = function (options = {}) {
 				},
 				{
 					test: /\.css$/,
-					use: ['to-string-loader', 'css-loader'],
+					use: [
+						'to-string-loader',
+						'css-loader',
+						'postcss-loader'
+					],
 					include: [helpers.root('src', 'app')]
 				},
 				{
 					test: /\.scss$/,
-					use: ['to-string-loader', 'css-loader', 'sass-loader'],
+					use: [
+						'to-string-loader',
+						'css-loader',
+						'postcss-loader',
+						'sass-loader'
+					],
 					include: [helpers.root('src', 'app')]
 				},
 				{
@@ -111,16 +121,30 @@ module.exports = function (options = {}) {
 			}),
 			new HtmlWebpackPlugin({
 				template: 'src/index.html',
+				inlineSource: 'runtime.+\\.js',
+				minify: {
+					removeComments: true,
+					collapseWhitespace: true,
+					removeRedundantAttributes: true,
+					useShortDoctype: true,
+					removeEmptyAttributes: true,
+					removeStyleLinkTypeAttributes: true,
+					keepClosingSlash: true,
+					minifyJS: true,
+					minifyCSS: true,
+					minifyURLs: true,
+				},
 				chunksSortMode: function (a, b) {
-					const entryPoints = ['inline', 'polyfills', 'runtime','sw-register', 'styles', 'vendor', 'main'];
-					console.log(a.names[0],b.names[0])
+					const entryPoints = ['inline', 'polyfills', 'runtime', 'sw-register', 'styles', 'vendor', 'main'];
+					console.log(a.names[0], b.names[0])
 					return entryPoints.indexOf(a.names[0]) - entryPoints.indexOf(b.names[0]);
 				},
 			}),
+			new InlineSourcePlugin(),
 			new CopyWebpackPlugin(
 				[
 					{ from: 'src/assets', to: 'assets' },
-					{from: 'src/favicon.ico', to: ''}
+					{ from: 'src/favicon.ico', to: '' }
 				]
 			),
 			...plugins
